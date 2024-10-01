@@ -2,8 +2,10 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 
 class Main {
-  public static void main(String[] args) throws AWTException {
-    Robot robot = new Robot();
+  public static void main(String[] args) {
+    try {
+      Robot robot = new Robot();
+    Random random = new Random();
 
     while (true) {
       robot.mouseMove(0, 0);
@@ -19,7 +21,7 @@ class Main {
       robot.keyRelease(KeyEvent.VK_ALT);
       robot.keyRelease(KeyEvent.VK_F4);
 
-      Thread.sleep(20);
+      Thread.sleep(random.nextInt(11) + 15);
     }
-  }
+  } catch (Exception e) {}
 }
